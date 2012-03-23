@@ -56,7 +56,7 @@ The `style` parameter provides a basic way to alter the html that is generated b
     {% tag_cloud style: list|para [{:separator}] %}
 
 - `list` wraps each anchor tag in an `<li>` tag for presenting the list as an (un)ordered list. The `{% tag_cloud %}` block needs to be enclosed in either a `<ol>` or a  `<ul>` block where it is included in the site's templates. `list` is the default option. The optional separator will have no effect when the `list` option is used
-- `para` removes the enclosing `<li>` tags and separates each item with an optional separator (indicated by :separator above). By default the separator is a comma followed by a space. An alternate separator can be indicated by wrapping the new separator inside curly brackets ({}) following the `para` option, i.e., `{% tag_cloud style: para { &mdash; } %}`
+- `para` removes the enclosing `<li>` tags and separates each item with an optional separator (indicated by `:separator` above). By default the separator is a comma followed by a space. An alternate separator can be indicated by wrapping the new separator inside curly brackets ({}) following the `para` option, i.e., `{% tag_cloud style: para { &mdash; } %}`
 
 Multiple parameters can be separated by a comma:
 
