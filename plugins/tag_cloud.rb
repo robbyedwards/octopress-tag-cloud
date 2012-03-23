@@ -1,6 +1,8 @@
+# encoding: utf-8
+#
 # Octopress tag cloud generator.
 #
-# Version: 0.1
+# Version: 0.2
 #
 # Copyright (c) 2012 Robby Edwards, http://robbyedwards.com.com/
 # Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
@@ -154,8 +156,9 @@ module Jekyll
         name, weight = tag
         size = size_min + ((size_max - size_min) * weight).to_f
         size = sprintf("%.#{@precision}f", size)
+        slug = name.to_s.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase
         @separator = "" if i == (weighted.size - 1)
-        html << "#{@tag_before}<a style=\"font-size: #{size}#{unit}\" href=\"#{dir}/#{name.downcase}/\">#{name}</a>#{@separator}#{@tag_after}\n"
+        html << "#{@tag_before}<a style=\"font-size: #{size}#{unit}\" href=\"/#{dir}/#{slug}/\">#{name}</a>#{@separator}#{@tag_after}\n"
       end
 
       return html
@@ -185,14 +188,14 @@ module Jekyll
     end
 
     def process_sort(param)
-      /(freq|rand|alpha) *(asc|desc)?/.match(param) do |m| #/
+      /(freq|rand|alpha) *(asc|desc)?/.match(param) do |m|
         @sort  = m[1]
         @order = m[2]
       end
     end
 
     def process_style(param)
-      /(list|para) *({(.*)})?/.match(param) do |m| #/
+      /(list|para) *({(.*)})?/.match(param) do |m|
         @style     = m[1]
         @separator = m[3]
       end
