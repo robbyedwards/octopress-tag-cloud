@@ -1,10 +1,10 @@
 # encoding: utf-8
 #
-# Octopress tag cloud generator.
+# Octopress tag cloud generator
 #
-# Version: 0.2
+# Version: 0.3
 #
-# Copyright (c) 2012 Robby Edwards, http://robbyedwards.com.com/
+# Copyright (c) 2012 Robby Edwards, http://robbyedwards.com/
 # Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
 #
 # Octopress plugin to display tag clouds.
@@ -16,52 +16,7 @@
 #         {% tag_cloud %}
 #     </div>
 #
-# The tag cloud itself is a collection of anchor tags, styled dynamically
-# with the 'font-size' CSS property. The range of values, and unit to use for
-# 'font-size' can be specified with a very simple syntax:
-#
-#     {% tag_cloud font-size: 16 - 28px %}
-#
-# The output is automatically formatted to use the same number of decimal
-# places as used in the argument:
-#
-#     {% tag_cloud font-size: 0.8  - 1.8em  %}  # => 1
-#     {% tag_cloud font-size: 0.80 - 1.80em %}  # => 2
-#
-# Tags that have been used less than a certain number of times can be
-# filtered out from the tag cloud with the optional 'threshold' parameter:
-#
-#     {% tag_cloud threshold: 2 %}
-#
-# The ouptput can be limited to a certain number of the most frequently occuring tags
-# when the sort method is alphabetical or frequency:
-#
-#     {% tag_cloud limit: 8 %} => results in a tag cloud with the eight most frequent
-#                                 tags sorted alphabetically
-#
-# When the sort method is random then output is randomly sorted and limited to @limit
-# items. Setting the 'limit' parameter to zero (the default) will display all tags.
-#
-# The output can be sorted in three ways:
-#
-#     {% tag_cloud sort: freq|rand|alpha %}
-#
-#  -- freq will sort by the frequency of the tag's occurence
-#  -- rand will sort randomly each time the cloud is generated
-#  -- alpha (the default) will sort the tags in alphabetical order
-#
-# An optional 'order' parameter can also be set, which will change the sort order:
-#
-#     {% tag_cloud sort: freq|rand|alpha [asc|desc] %}
-#
-# By default, alphabetical sorts will be asc, and frequency sorts will be desc. The 
-# 'order' parameter has no effect on random sorts.
-#
-# 
-#
-# Multiple parameters can be separated by a comma:
-#
-#     {% tag_cloud font-size: 50 - 150%, threshold: 2 %}
+# See README for installation and usage instructions.
 
 module Jekyll
 

@@ -1,4 +1,7 @@
-# Octopress Tag Cloud Changelog #
+# CHANGELOG #
+
+## 0.3 #
+- added README
 
 ## 0.2 #
 - fixed generated URLs
