@@ -1,6 +1,6 @@
 # README #
 
-Octopress plugin to display tag clouds. Based on https://gist.github.com/1577100 by @tokkonopapa
+Octopress plugin to display tag clouds. Based on https://gist.github.com/1577100 by tokkonopapa
 
 Version: 0.3
 
