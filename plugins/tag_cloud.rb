@@ -116,7 +116,7 @@ module Jekyll
         html << "#{@tag_before}<a style=\"font-size: #{size}#{unit}\" href=\"/#{dir}/#{slug}/\">#{name}</a>#{@separator}#{@tag_after}\n"
       end
 
-      return html
+      html
     end
 
     private
