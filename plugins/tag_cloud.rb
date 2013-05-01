@@ -50,7 +50,7 @@ module Jekyll
 
     def render(context)
       # get the directory for the tag links
-      dir = context.registers[:site].config['tag_dir']
+      dir = context.registers[:site].config['tag_dir'] || 'tags'
 
       # get an Array of [tag name, tag count] pairs
       count = context.registers[:site].tags.map do |name, posts|
