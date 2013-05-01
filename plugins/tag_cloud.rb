@@ -18,6 +18,8 @@
 #
 # See README for installation and usage instructions.
 
+require 'stringex'
+
 module Jekyll
 
   class TagCloud < Liquid::Tag
@@ -111,7 +113,7 @@ module Jekyll
         name, weight = tag
         size = size_min + ((size_max - size_min) * weight).to_f
         size = sprintf("%.#{@precision}f", size)
-        slug = name.to_s.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase
+        slug = name.to_url
         @separator = "" if i == (weighted.size - 1)
         html << "#{@tag_before}<a style=\"font-size: #{size}#{unit}\" href=\"/#{dir}/#{slug}/\">#{name}</a>#{@separator}#{@tag_after}\n"
       end
