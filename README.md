@@ -2,7 +2,7 @@
 
 Octopress plugin to display tag clouds. Based on https://gist.github.com/1577100 by tokkonopapa
 
-Version: 0.3
+Version: 0.4
 
 
 ## Getting Started #
@@ -19,6 +19,10 @@ Defines a `tag_cloud` tag that is rendered by Liquid into a tag cloud:
     <div class="cloud">
         {% tag_cloud %}
     </div>
+
+Available _config.yml settings :
+
+- `tag_dir`: The subfolder to build tag pages in (default is `tags`).
 
 The tag cloud itself is a collection of anchor tags, styled dynamically with the `font-size` CSS property. The range of values, and unit to use for `font-size` can be specified with a very simple syntax:
 
