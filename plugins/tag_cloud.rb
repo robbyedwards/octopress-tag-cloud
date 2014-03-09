@@ -67,6 +67,10 @@ module Jekyll
       weighted = count.map do |name, count|
         # logarithmic distribution
         weight = (Math.log(count) - Math.log(min))/(Math.log(max) - Math.log(min))
+
+        # Add this check for NaN to close #1
+        weight = 0 if weight.nan?
+
         [name, weight]
       end
 
