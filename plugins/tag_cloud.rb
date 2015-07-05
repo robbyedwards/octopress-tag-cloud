@@ -66,7 +66,13 @@ module Jekyll
       # map: [[tag name, tag count]] -> [[tag name, tag weight]]
       weighted = count.map do |name, count|
         # logarithmic distribution
-        weight = (Math.log(count) - Math.log(min))/(Math.log(max) - Math.log(min))
+        if (min != max)
+            # logarithmic distribution
+            weight = (Math.log(count) - Math.log(min))/(Math.log(max) - Math.log(min))
+        else
+            # value which makes the font-size calculated below equals to 100%
+            weight = (100 - size_min) / (size_max - size_min)
+        end
         [name, weight]
       end
 
@@ -111,6 +117,7 @@ module Jekyll
       # iterate over the weighted tag Array and create the tag items
       weighted.each_with_index do |tag, i|
         name, weight = tag
+        # calculate font-size
         size = size_min + ((size_max - size_min) * weight).to_f
         size = sprintf("%.#{@precision}f", size)
         slug = name.to_url
